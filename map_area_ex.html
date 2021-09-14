@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>이미지 맵 만들기</title>
+</head>
+<body>
+    <h1>이미지 맵 사용하기</h1>
+    <p><img src="images/imageMap.jpg" width="400" height="335"
+        usemap="#Map" alt="맵 이미지 없음" ></p>
+        <!-- map element = name 속성 : 속성값(문자열) : 이미지 맵의 명칭 정의
+	 1) 사용 형식 = <img src="URI" alt="대체텍스트" usemap="#map이름" />
+	                <map name="map이름" id="map이름">
+					     <area shape="default|rect|circle|poly" coords="좌표" href="URI" alt="대체텍스트" />
+				    </map>
+	 2) client side image map = 사용자가 이미지의 특정 영역 클릭 시 브라우저에서 클릭한 곳의 좌표 기준
+	                            링크 위치 판단 표시 : 브라우저측에서 동작 처리됨
+	 3) server side image map = 사용자가 이미지의 특정 영역을 클릭하면 서버에 있는 CGI 등의 프로그램을
+	                            통해 클릭한 곳의 좌표가 서버로 전송되어 처리됨 -->
+      <!--id 속성 = 자바스크립트와 같은 클라이언트스크립트로 객체를 제어하기 위한 이름은 id로 부여하며,
+                  CSS 표현 시 id(웹페이지 내 하나만 지정 가능), class(웹페이지 내 복수로 여러 곳에 지정 가능)
+        name 속성 = 엘리먼트에 대한 명칭을 나타내며, 주로 서버스크립트(ASP, JSP, PHP 등)에서 해당 값을 읽어올 변수값으로
+		            name 속성 값을 연계하여 input 값을 송/수신할 때 사용함. -->
+
+    <map name="Map" id="Map">
+
+    <!-- 원형 모양의 영역 -->
+    <area shape="circle" coords="201, 169, 60" href="http://www.wah.or.kr"
+             target="_blank" alt="웹 접근성 연구소">
+
+    <!-- 사각형 모양의 영역 -->
+    <area shape="rect" coords="40, 77, 112, 152" href="http://www.kbs.co.kr"
+             alt="KBS 방송국 웹사이트">
+
+    <!-- 다각형 모양의 영역 -->
+    <area shape="poly" coords="310, 185, 250, 283, 370, 283" href="http://www.sbs.co.kr" 
+                alt="sbs 방송국 웹사이트">
+    <area shape="poly" coords="83, 213, 139, 213, 160, 261, 139, 310, 83, 310, 60, 264"
+         href="http://www.mbc.co.kr" alt="MBC 방송국 웹사이트">
+
+    <area shape="poly" coords="293, 15, 232, 51, 254, 11, 334, 111, 355, 51"
+         href="http://www.ytn.co.kr" alt="YTN 방송국 웹사이트">     
+    
+
+    </map>
+
+    <p><img src="images/shape&coords.jpg" width="1000" height="300" alt="shape와 coords 설명"></p>
+        <!-- area element
+	     1) 이미지 맵에서 하이퍼링크되는 영역들을 정의할 때 사용함
+	     2) 태그 괄호 안에 종료 기호(/)를 포함하는 독립형 요소
+		 3) map element 내부에서만 사용 가능
+		 4) alt 속성 = 속성값(문자열) : 영역 대신 표시할 문자열 정의
+		 5) coords 속성 = 속성값(좌표값) : 영역에 대한 좌표값 정의
+		 6) href 속성 = 속성값(URL) : 영역과 연결될 웹 문서의 위치를 정의
+		 7) shape 속성(영역의 모양 정의) = 속성값[default(전체 region 영역), rect(rectangular region 영역),
+		                                   circle(circular region 영역), poly(polygonal region 영역)]
+		 8) target 속성 : 속성값(_blank, _self, _top, _parent)
+		    = 연결된 웹 문서가 표시되는 웹 브라우저 창의 위치를 정의 -->
+
+
+</body>
+</html>
